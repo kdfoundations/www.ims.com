@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">IMS</div>
+        <div class="hamburger" id="hamburger" aria-label="Open navigation" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="active">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul>
+        <div class="datetime-display">
+            <div id="time" class="time"></div>
+            <div id="date" class="date"></div>
+        </div>
+        <div class="user-profile">
+            <i class="fas fa-user"></i>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="dashboard fade-in">
+            <h1>Dashboard</h1>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-box"></i>
+                    <h3>Total Items</h3>
+                    <p id="totalItems">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Low Stock</h3>
+                    <p id="lowStock">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Total Value</h3>
+                    <p id="totalValue">$0</p>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div id="activityList" class="activity-list fade-in">
+                    <!-- Activity items will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 

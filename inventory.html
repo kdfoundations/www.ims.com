@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management - Items</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/inventory.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">IMS</div>
+        <div class="hamburger" id="hamburger" aria-label="Open navigation" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="inventory.html" class="active">Inventory</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul>
+        <div class="user-profile">
+            <i class="fas fa-user"></i>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="inventory-header">
+            <h1>Inventory Management</h1>
+            <button id="addItemBtn" class="btn-primary">
+                <i class="fas fa-plus"></i> Add New Item
+            </button>
+        </div>
+
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="Search items...">
+            <select id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Accessories">Accessories</option>
+            </select>
+        </div>
+
+        <div class="inventory-table-container fade-in">
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryTableBody">
+                    <!-- Inventory items will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal for adding/editing items -->
+        <div id="itemModal" class="modal fade-in">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">Add New Item</h2>
+                <form id="itemForm">
+                    <div class="form-group">
+                        <label for="itemName">Name</label>
+                        <input type="text" id="itemName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemCategory">Category</label>
+                        <select id="itemCategory" required>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Accessories">Accessories</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemQuantity">Quantity</label>
+                        <input type="number" id="itemQuantity" required min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="itemPrice">Price</label>
+                        <input type="number" id="itemPrice" required min="0" step="0.01">
+                    </div>
+                    <button type="submit" class="btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/inventory.js"></script>
+</body>
+</html> 

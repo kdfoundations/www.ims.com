@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management - Reports</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/reports.css">
+    <link rel="stylesheet" href="styles/chatbot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">IMS</div>
+        <div class="hamburger" id="hamburger" aria-label="Open navigation" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="reports.html" class="active">Reports</a></li>
+        </ul>
+        <div class="datetime-display">
+            <div id="time" class="time"></div>
+            <div id="date" class="date"></div>
+        </div>
+        <div class="user-profile">
+            <i class="fas fa-user"></i>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="reports-header">
+            <h1>Analytics & Reports</h1>
+            <div class="date-range">
+                <input type="date" id="startDate">
+                <span>to</span>
+                <input type="date" id="endDate">
+                <button id="updateReports" class="btn-primary">
+                    <i class="fas fa-sync"></i> Update
+                </button>
+            </div>
+        </div>
+
+        <div class="reports-grid">
+            <!-- Sales Overview -->
+            <div class="report-card fade-in">
+                <h2>Sales Overview</h2>
+                <canvas id="salesChart"></canvas>
+            </div>
+
+            <!-- Category Distribution -->
+            <div class="report-card fade-in">
+                <h2>Category Distribution</h2>
+                <canvas id="categoryChart"></canvas>
+            </div>
+
+            <!-- Top Products -->
+            <div class="report-card fade-in">
+                <h2>Top Products</h2>
+                <div class="top-products" id="topProducts">
+                    <!-- Top products will be added here dynamically -->
+                </div>
+            </div>
+
+            <!-- Inventory Status -->
+            <div class="report-card fade-in">
+                <h2>Inventory Status</h2>
+                <canvas id="inventoryChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Detailed Statistics -->
+        <div class="statistics-grid">
+            <div class="stat-card fade-in">
+                <i data-feather="dollar-sign"></i>
+                <h3>Total Revenue</h3>
+                <p id="totalRevenue">$0.00</p>
+            </div>
+            <div class="stat-card fade-in">
+                <i data-feather="shopping-cart"></i>
+                <h3>Total Orders</h3>
+                <p id="totalOrders">0</p>
+            </div>
+            <div class="stat-card fade-in">
+                <i data-feather="package"></i>
+                <h3>Products Sold</h3>
+                <p id="productsSold">0</p>
+            </div>
+            <div class="stat-card fade-in">
+                <i data-feather="trending-up"></i>
+                <h3>Growth Rate</h3>
+                <p id="growthRate">0%</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+    </script>
+</body>
+</html> 
